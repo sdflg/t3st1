@@ -51,7 +51,57 @@ body.dark-mode {
     transition: background-color 0.3s;
 }
 
-body.dark-mode #draw-button, body.dark-mode #theme-toggle {
+body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode .container button {
     background-color: var(--button-background-dark);
     color: var(--button-text-dark);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+form label {
+    align-self: flex-start;
+    margin-bottom: -5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't increase total width */
+    background-color: var(--background-color-light); /* Inherit from theme */
+    color: var(--text-color-light); /* Inherit from theme */
+}
+
+body.dark-mode form input[type="text"],
+body.dark-mode form input[type="email"],
+body.dark-mode form textarea {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    border: 1px solid #555;
+}
+
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
 }
