@@ -14,12 +14,42 @@ function drawLottoNumber() {
     numberEl.textContent = number;
 }
 
+/**
+ * Loads Disqus comments dynamically, handling initial load and reloads.
+ */
+function loadDisqus() {
+    // Disqus configuration
+    var disqus_config = function () {
+        this.page.url = window.location.href;
+        this.page.identifier = 'lotto-page-1'; // Unique identifier for the page
+    };
+
+    // If DISQUS is already loaded, reset it
+    if (window.DISQUS) {
+        DISQUS.reset({
+            reload: true,
+            config: disqus_config
+        });
+    } else {
+        // If DISQUS is not loaded, create and append the script
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://t3st1.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    }
+}
+
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
+    // Reload Disqus on theme change to ensure it renders correctly
+    loadDisqus();
 }
 
 drawButton.addEventListener('click', drawLottoNumber);
 themeToggle.addEventListener('click', toggleTheme);
 
-// 페이지 로드 시 초기 번호 추첨
+// Initial actions on page load
 drawLottoNumber();
+loadDisqus();
