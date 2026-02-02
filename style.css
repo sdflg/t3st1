@@ -34,21 +34,22 @@ body.dark-mode {
 .lotto-number {
     font-size: 3rem;
     margin: 20px 0;
+    padding: 10px 0; /* Add some vertical padding */
 }
 
-.lotto-number span {
-    display: inline-block;
+.lotto-display-wrapper {
+    display: inline-block; /* To make background apply only to content width */
     padding: 10px 15px;
-    margin: 0 5px;
     border-radius: 8px;
     background-color: #f0f0f0; /* Light mode background */
     color: var(--text-color-light); /* Light mode text color */
     box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    min-width: 80px; /* Ensure sufficient width */
+    min-width: 250px; /* Ensure sufficient width for group + number */
     text-align: center;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-body.dark-mode .lotto-number span {
+body.dark-mode .lotto-display-wrapper {
     background-color: #333; /* Dark mode background */
     color: var(--text-color-dark); /* Dark mode text color */
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
@@ -72,6 +73,53 @@ body.dark-mode .lotto-number span {
 body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode #draw-5-button, body.dark-mode .container button {
     background-color: var(--button-background-dark);
     color: var(--button-text-dark);
+}
+
+/* Styles for the draw history section */
+#draw-history {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 40px;
+    text-align: center; /* Center the heading */
+}
+
+#history-list {
+    list-style: none; /* Remove default list bullets */
+    padding: 0;
+    margin-top: 20px;
+    max-height: 300px; /* Limit height for scrollability */
+    overflow-y: auto; /* Add scroll for overflowing content */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: left; /* Align list items to left */
+}
+
+body.dark-mode #history-list {
+    border: 1px solid #555;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#history-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+body.dark-mode #history-list li {
+    border-bottom: 1px solid #444;
+}
+
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+#history-list li span {
+    font-weight: bold;
+    color: #4CAF50; /* A distinct color for drawn numbers in history */
+}
+
+body.dark-mode #history-list li span {
+    color: #8bc34a; /* Lighter green for dark mode */
 }
 
 form {
