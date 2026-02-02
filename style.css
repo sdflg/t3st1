@@ -29,6 +29,62 @@ body.dark-mode {
 
 .container {
     text-align: center;
+    /* Adjust container to allow inline elements next to h1 */
+    position: relative;
+    padding-top: 20px; /* Add some padding for the new elements */
+}
+
+h1 {
+    display: inline-block; /* Allow other elements next to it */
+    margin-right: 10px; /* Space between title and controls */
+}
+
+.login-signup-controls {
+    display: inline-flex; /* Align items inside and allow group next to h1 */
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8em; /* Small text */
+    vertical-align: middle; /* Align with middle of h1 */
+}
+
+.login-signup-controls input[type="text"],
+.login-signup-controls input[type="password"] {
+    padding: 5px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+}
+
+body.dark-mode .login-signup-controls input[type="text"],
+body.dark-mode .login-signup-controls input[type="password"] {
+    background-color: #444;
+    color: var(--text-color-dark);
+    border-color: #666;
+}
+
+#signup-button {
+    background-color: #007bff; /* Blue for signup */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#signup-button:hover {
+    background-color: #0056b3;
+}
+
+body.dark-mode #signup-button {
+    background-color: #1a73e8; /* Slightly different blue for dark mode */
+}
+
+body.dark-mode #signup-button:hover {
+    background-color: #0d47a1;
 }
 
 .lotto-number {
