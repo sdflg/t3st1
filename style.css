@@ -105,3 +105,104 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+/* New styles for content-box */
+.content-box {
+    background-color: rgba(0, 0, 0, 0.05); /* Light transparent background */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    line-height: 1.6;
+    color: var(--text-color-light); /* Default to light mode text color */
+}
+
+body.dark-mode .content-box {
+    background-color: rgba(255, 255, 255, 0.05); /* Dark transparent background */
+    color: var(--text-color-dark); /* Dark mode text color */
+}
+
+.content-box h3 {
+    margin-top: 20px;
+    border-bottom: 1px solid var(--text-color-light);
+    padding-bottom: 5px;
+}
+
+body.dark-mode .content-box h3 {
+    border-bottom: 1px solid var(--text-color-dark);
+}
+
+.content-box ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.content-box a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.content-box a:hover {
+    text-decoration: underline;
+}
+
+
+/* New styles for footer */
+footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    border-top: 1px solid #eee;
+    position: relative; /* Change to relative to not overlap content */
+    bottom: 0;
+    left: 0;
+    margin-top: 40px; /* Add some space above the footer */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+body.dark-mode footer {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+    border-top: 1px solid #333;
+}
+
+footer nav a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+body.dark-mode footer nav a {
+    color: var(--text-color-dark);
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Adjust body for footer */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    flex-grow: 1; /* Allow container to grow and push footer down */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px; /* Space for content above footer */
+}
