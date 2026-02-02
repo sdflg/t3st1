@@ -55,7 +55,39 @@ body.dark-mode .lotto-display-wrapper {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
-#draw-button, #theme-toggle, #draw-5-button {
+body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode #draw-5-button {
+    background-color: var(--button-background-dark);
+    color: var(--button-text-dark);
+}
+
+/* Ensure contact button in dark mode retains light mode style */
+body.dark-mode a button {
+    background-color: var(--button-background-light);
+    color: var(--button-text-light);
+}
+
+body.dark-mode a button:hover {
+    background-color: #3e8e41; /* Darker green for hover in dark mode */
+}
+
+
+/* New styles for button groups */
+#draw-buttons-group, #utility-buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+#utility-buttons-group button, #utility-buttons-group a button {
+    flex-basis: 150px; /* Give a fixed width to ensure consistency, adjust as needed */
+    max-width: 180px;
+    /* Remove individual button margins, handled by gap */
+    margin: 0;
+}
+
+#draw-button, #theme-toggle, #draw-5-button, a button {
     background-color: var(--button-background-light);
     color: var(--button-text-light);
     padding: 15px 32px;
@@ -63,16 +95,10 @@ body.dark-mode .lotto-display-wrapper {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
     border: none;
     transition: background-color 0.3s;
-}
-
-body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode #draw-5-button, body.dark-mode .container button {
-    background-color: var(--button-background-dark);
-    color: var(--button-text-dark);
 }
 
 /* Styles for the draw history section */
