@@ -36,7 +36,25 @@ body.dark-mode {
     margin: 20px 0;
 }
 
-#draw-button, #theme-toggle {
+.lotto-number span {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    background-color: #f0f0f0; /* Light mode background */
+    color: var(--text-color-light); /* Light mode text color */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    min-width: 80px; /* Ensure sufficient width */
+    text-align: center;
+}
+
+body.dark-mode .lotto-number span {
+    background-color: #333; /* Dark mode background */
+    color: var(--text-color-dark); /* Dark mode text color */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+#draw-button, #theme-toggle, #draw-5-button {
     background-color: var(--button-background-light);
     color: var(--button-text-light);
     padding: 15px 32px;
@@ -51,7 +69,7 @@ body.dark-mode {
     transition: background-color 0.3s;
 }
 
-body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode .container button {
+body.dark-mode #draw-button, body.dark-mode #theme-toggle, body.dark-mode #draw-5-button, body.dark-mode .container button {
     background-color: var(--button-background-dark);
     color: var(--button-text-dark);
 }
