@@ -1,6 +1,7 @@
 const groupEl = document.getElementById('group');
 const numberEl = document.getElementById('number');
 const drawButton = document.getElementById('draw-button');
+const themeToggle = document.getElementById('theme-toggle');
 
 function drawLottoNumber() {
     // 1조에서 5조까지 랜덤 생성
@@ -13,7 +14,12 @@ function drawLottoNumber() {
     numberEl.textContent = number;
 }
 
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+}
+
 drawButton.addEventListener('click', drawLottoNumber);
+themeToggle.addEventListener('click', toggleTheme);
 
 // 페이지 로드 시 초기 번호 추첨
 drawLottoNumber();
