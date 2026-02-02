@@ -12,11 +12,20 @@
 <body>
     <div class="container">
         <h1>연금복권 번호 추첨</h1>
-        <div class="login-signup-controls">
+        <div class="login-signup-controls" id="login-controls">
             <input type="text" id="login-id" placeholder="아이디" size="10">
             <input type="password" id="login-pw" placeholder="비밀번호" size="10">
             <button id="login-button">로그인</button>
             <button id="signup-button">회원가입</button>
+        </div>
+
+        <div class="signup-form-container" id="signup-form" style="display: none;">
+            <h2>회원가입</h2>
+            <input type="email" id="signup-email" placeholder="이메일" size="20">
+            <input type="password" id="signup-password" placeholder="비밀번호" size="20">
+            <input type="password" id="signup-confirm-password" placeholder="비밀번호 확인" size="20">
+            <button id="signup-submit-button">회원가입 하기</button>
+            <button id="signup-back-button">뒤로가기</button>
         </div>
         <div class="content-box">
             <p>저희 사이트는 여러분에게 쉽고 빠르게 연금복권 번호를 추첨해 드리는 서비스입니다. 복잡한 절차 없이 버튼 한 번으로 행운의 번호를 즉시 확인할 수 있습니다.</p>
@@ -45,7 +54,7 @@
         </div>
 
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
     <footer>
         <nav>
             <a href="about.html">사이트 소개</a>
