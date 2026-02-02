@@ -3,6 +3,7 @@ const numberEl = document.getElementById('number');
 const drawButton = document.getElementById('draw-button');
 const themeToggle = document.getElementById('theme-toggle');
 const draw5Button = document.getElementById('draw-5-button');
+const clearHistoryButton = document.getElementById('clear-history-button'); // New reference
 const lottoDisplayWrapper = document.querySelector('.lotto-display-wrapper'); // New reference
 const historyList = document.getElementById('history-list'); // New reference
 
@@ -67,6 +68,13 @@ function handleConsecutiveDraws() {
     }, 300); // 0.3초마다 추첨
 }
 
+/**
+ * Clears all entries from the history list.
+ */
+function clearHistory() {
+    historyList.innerHTML = '';
+}
+
 function toggleTheme() {
     document.body.classList.toggle('dark-mode');
 }
@@ -74,6 +82,7 @@ function toggleTheme() {
 drawButton.addEventListener('click', handleSingleDraw);
 themeToggle.addEventListener('click', toggleTheme);
 draw5Button.addEventListener('click', handleConsecutiveDraws);
+clearHistoryButton.addEventListener('click', clearHistory); // New event listener
 
 // Initial actions on page load
 handleSingleDraw(); // Perform one draw on page load to show initial numbers
